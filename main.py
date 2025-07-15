@@ -19,4 +19,11 @@ def start():
     b0 = make_block(0, "first", "0")
     blockchain.append(b0)
 
+def addblock():
+    data = input("Type something to store: ")
+    last = blockchain[-1]
+    nb = make_block(len(blockchain), data, last['h'])
+    blockchain.append(nb)
+    print("done")
+
 start()
