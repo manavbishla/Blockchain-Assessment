@@ -26,4 +26,13 @@ def addblock():
     blockchain.append(nb)
     print("done")
 
+def see_chain():
+    for b in blockchain:
+        print("idx:", b['i'])
+        print("time:", b['t'])
+        print("data:", b['d'])
+        print("prev_hash:", b['ph'])
+        print("hash:", b['h'])
+        print("--------------------------")
+
 start()
