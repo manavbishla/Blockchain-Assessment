@@ -35,4 +35,21 @@ def see_chain():
         print("hash:", b['h'])
         print("--------------------------")
 
+def check_chain():
+    good = True
+    for i in range(1, len(blockchain)):
+        now = blockchain[i]
+        before = blockchain[i - 1]
+        comb = str(now['i']) + str(now['t']) + now['d'] + now['ph']
+        if now['h'] != hashlib.sha256(comb.encode()).hexdigest():
+            print("hash wrong at block", i)
+            good = False
+        if now['ph'] != before['h']:
+            print("link broken at block", i)
+            good = False
+    if good:
+        print("chain fine")
+    else:
+        print("chain broken")
+
 start()
