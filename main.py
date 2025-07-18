@@ -52,4 +52,25 @@ def check_chain():
     else:
         print("chain broken")
 
+def menu():
+    while True:
+        print("\nMenu:")
+        print("1. Add block")
+        print("2. Display chain")
+        print("3. Check chain")
+        print("4. Bye")
+
+        ch = input("Enter choice: ")
+
+        if ch == "1":
+            addblock()
+        elif ch == "2":
+            see_chain()
+        elif ch == "3":
+            check_chain()
+        elif ch == "4":
+            break
+        else:
+            print("what? try again")
+
 start()
