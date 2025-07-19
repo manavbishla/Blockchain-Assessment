@@ -74,3 +74,4 @@ def menu():
             print("what? try again")
 
 start()
+menu()
